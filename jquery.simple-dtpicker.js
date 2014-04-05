@@ -6,106 +6,106 @@
  */
 
  (function($) {
-    var lang = {
-    	en: {
-    		days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-    		months: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
-    		sep: '-',
-    		format: 'YYYY-MM-DD hh:mm',
-    		prevMonth: 'Previous month',
-    		nextMonth: 'Next month',
-    		today: 'Today'
-    		},
-    	ro:{
-    		days: ['Dum', 'Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm'],
-    		months: ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    		sep: '.',
-    		format: 'DD.MM.YYYY hh:mm',
-    		prevMonth: 'Luna precedentă',
-    		nextMonth: 'Luna următoare',
-    		today: 'Azi'		
-    		},
+	var lang = {
+		en: {
+			days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+			months: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
+			sep: '-',
+			format: 'YYYY-MM-DD hh:mm',
+			prevMonth: 'Previous month',
+			nextMonth: 'Next month',
+			today: 'Today'
+			},
+		ro:{
+			days: ['Dum', 'Lun', 'Mar', 'Mie', 'Joi', 'Vin', 'Sâm'],
+			months: ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			sep: '.',
+			format: 'DD.MM.YYYY hh:mm',
+			prevMonth: 'Luna precedentă',
+			nextMonth: 'Luna următoare',
+			today: 'Azi'		
+			},
 
-    	ja: {
-    		days: ['日', '月', '火', '水', '木', '金', '土'],
-    		months: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
-    		sep: '/',
-    		format: 'YYYY/MM/DD hh:mm'
-    		},
-    	ru: {
-    		days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-    		months: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
-    		format: 'DD.MM.YYYY hh:mm'
-    		},
-    	br: {
-    		days: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
-    		months: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ],
-    		format: 'DD/MM/YYYY hh:mm'
-    		},
-    	pt: {
-    		days: ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'],
-    		months: [ "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" ]
-    		},
-    	cn: {
-    		days: ['日', '一', '二', '三', '四', '五', '六'],
-    		months: [ "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" ]
-    		},
-    	de: {
-    		days: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-    		months: [ "Jan", "Feb", "März", "Apr", "Mai", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dez" ],
-    		format: 'DD.MM.YYYY hh:mm'
-    		},
-    	sv: {
-    		days: ['Sö', 'Må', 'Ti', 'On', 'To', 'Fr', 'Lö'],
-    		months: [ "Jan", "Feb", "Mar", "Apr", "Maj", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dec" ]
-    		},
-    	id: {
-    		days: ['Min','Sen','Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
-    		months: [ "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des" ]
-    		},
-    	it: {
-    		days: ['Dom','Lun','Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
-    		months: [ "Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic" ],
-    		format: 'DD/MM/YYYY hh:mm'
-    		},
-    	tr: {
-    		days: ['Pz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cu', 'Cts'],
-    		months: [ "Ock", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Agu", "Eyl", "Ekm", "Kas", "Arlk" ]
-    		},
-    	es: {
-    		days: ['dom', 'lun', 'mar', 'miér', 'jue', 'vié', 'sáb'],
-    		months: [ "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic" ],
-    		format: 'DD/MM/YYYY hh:mm'
-    		},
-    	ko: {
-    		days: ['일', '월', '화', '수', '목', '금', '토'],
-    		months: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ]
-    		},
-    	nl: {
-    		days: ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'],
-    		months: [ "jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec" ],
-    		format: 'DD-MM-YYYY hh:mm'
-    		},
-    	cz: {
-    		days: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
-    		months: [ "Led", "Úno", "Bře", "Dub", "Kvě", "Čer", "Čvc", "Srp", "Zář", "Říj", "Lis", "Pro" ],
-    		format: 'DD.MM.YYYY hh:mm'
-    		},
-    	fr: {
-    		days: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
-    		months: [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ],
-    		format: 'DD-MM-YYYY hh:mm'
-    		},
-    	pl: {
-    		days: ['N', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'],
-    		months: [ "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" ],
-    		sep: '-',
-    		format: 'YYYY-MM-DD hh:mm',
-    		prevMonth: 'Poprzedni miesiąc',
-    		nextMonth: 'Następny miesiąc',
-    		today: 'Dzisiaj'
-    		},
-    };
+		ja: {
+			days: ['日', '月', '火', '水', '木', '金', '土'],
+			months: [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
+			sep: '/',
+			format: 'YYYY/MM/DD hh:mm'
+			},
+		ru: {
+			days: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+			months: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+			format: 'DD.MM.YYYY hh:mm'
+			},
+		br: {
+			days: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+			months: [ "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" ],
+			format: 'DD/MM/YYYY hh:mm'
+			},
+		pt: {
+			days: ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'],
+			months: [ "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro" ]
+			},
+		cn: {
+			days: ['日', '一', '二', '三', '四', '五', '六'],
+			months: [ "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月" ]
+			},
+		de: {
+			days: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+			months: [ "Jan", "Feb", "März", "Apr", "Mai", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dez" ],
+			format: 'DD.MM.YYYY hh:mm'
+			},
+		sv: {
+			days: ['Sö', 'Må', 'Ti', 'On', 'To', 'Fr', 'Lö'],
+			months: [ "Jan", "Feb", "Mar", "Apr", "Maj", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dec" ]
+			},
+		id: {
+			days: ['Min','Sen','Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
+			months: [ "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des" ]
+			},
+		it: {
+			days: ['Dom','Lun','Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+			months: [ "Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic" ],
+			format: 'DD/MM/YYYY hh:mm'
+			},
+		tr: {
+			days: ['Pz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cu', 'Cts'],
+			months: [ "Ock", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Agu", "Eyl", "Ekm", "Kas", "Arlk" ]
+			},
+		es: {
+			days: ['dom', 'lun', 'mar', 'miér', 'jue', 'vié', 'sáb'],
+			months: [ "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic" ],
+			format: 'DD/MM/YYYY hh:mm'
+			},
+		ko: {
+			days: ['일', '월', '화', '수', '목', '금', '토'],
+			months: [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ]
+			},
+		nl: {
+			days: ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za'],
+			months: [ "jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec" ],
+			format: 'DD-MM-YYYY hh:mm'
+			},
+		cz: {
+			days: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
+			months: [ "Led", "Úno", "Bře", "Dub", "Kvě", "Čer", "Čvc", "Srp", "Zář", "Říj", "Lis", "Pro" ],
+			format: 'DD.MM.YYYY hh:mm'
+			},
+		fr: {
+			days: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+			months: [ "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" ],
+			format: 'DD-MM-YYYY hh:mm'
+			},
+		pl: {
+			days: ['N', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'],
+			months: [ "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" ],
+			sep: '-',
+			format: 'YYYY-MM-DD hh:mm',
+			prevMonth: 'Poprzedni miesiąc',
+			nextMonth: 'Następny miesiąc',
+			today: 'Dzisiaj'
+			},
+	};
 	/* ----- */
 
 	var PickerHandler = function($picker, $input){
@@ -658,7 +658,7 @@
 			realDayObjMN.setHours(23);
 			realDayObjMN.setMinutes(59);
 			realDayObjMN.setSeconds(59);
-            
+			
 			if (
 				((minDate != null) && (minDate > realDayObjMN.getTime())) // compare to 23:59:59 on the current day (if MIN is 1pm, then we still need to show this day
 				|| ((maxDate != null) && (maxDate < realDayObj.getTime())) // compare to 00:00:00
@@ -680,11 +680,11 @@
 						"isAnim": false,
 						"isOutputToInputObject": true
 					}, targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate(), selectedDate.getHours(), selectedDate.getMinutes());
-	                                if ($picker.data("dateOnly") == true && $picker.data("isInline") == false && $picker.data("closeOnSelected")){
-	                                        // Close a picker
-	                                        ActivePickerId = -1;
-	                                        $picker.hide();
-	                                }					
+									if ($picker.data("dateOnly") == true && $picker.data("isInline") == false && $picker.data("closeOnSelected")){
+											// Close a picker
+											ActivePickerId = -1;
+											$picker.hide();
+									}					
 				});
 				
 
@@ -914,8 +914,8 @@
 		} else {
 			$picker.data("minuteInterval", 30);
 		}
-	        opt.minTime = opt.minTime.split(':');	
-	        opt.maxTime = opt.maxTime.split(':');
+			opt.minTime = opt.minTime.split(':');	
+			opt.maxTime = opt.maxTime.split(':');
 
 		if(! ((opt.minTime[0] >= 0 ) && (opt.minTime[0] <24 ))){
 			opt.minTime[0]="00";
@@ -1225,6 +1225,37 @@
 		}
 	};
 
+	/**
+		Solution for the environment in which the console function is not allowed.
+		http://stackoverflow.com/questions/8095348/
+	**/
+	if (!window.console) (function() {
+		var __console, Console;
+
+		Console = function() {
+			var check = setInterval(function() {
+				var f;
+				if (window.console && console.log && !console.__buffer) {
+					clearInterval(check);
+					f = (Function.prototype.bind) ? Function.prototype.bind.call(console.log, console) : console.log;
+					for (var i = 0; i < __console.__buffer.length; i++) f.apply(console, __console.__buffer[i]);
+				}
+			}, 1000); 
+
+			function log() {
+				this.__buffer.push(arguments);
+			}
+
+			this.log = log;
+			this.error = log;
+			this.warn = log;
+			this.info = log;
+			this.__buffer = [];
+		};
+
+		__console = window.console = new Console();
+	})();
+	
 	/* Set event handler to Body element, for hide a floated-picker */
 	$(function(){
 		$('body').click(function(){
