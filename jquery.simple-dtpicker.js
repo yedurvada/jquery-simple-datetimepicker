@@ -680,11 +680,11 @@
 						"isAnim": false,
 						"isOutputToInputObject": true
 					}, targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate(), selectedDate.getHours(), selectedDate.getMinutes());
-									if ($picker.data("dateOnly") == true && $picker.data("isInline") == false && $picker.data("closeOnSelected")){
-											// Close a picker
-											ActivePickerId = -1;
-											$picker.hide();
-									}					
+					if ($picker.data("dateOnly") == true && $picker.data("isInline") == false && $picker.data("closeOnSelected")){
+						// Close a picker
+						ActivePickerId = -1;
+						$picker.hide();
+					}					
 				});
 				
 
@@ -914,9 +914,9 @@
 		} else {
 			$picker.data("minuteInterval", 30);
 		}
-			opt.minTime = opt.minTime.split(':');	
-			opt.maxTime = opt.maxTime.split(':');
-
+		opt.minTime = opt.minTime.split(':');	
+		opt.maxTime = opt.maxTime.split(':');
+		
 		if(! ((opt.minTime[0] >= 0 ) && (opt.minTime[0] <24 ))){
 			opt.minTime[0]="00";
 		}	
@@ -1255,7 +1255,7 @@
 
 		__console = window.console = new Console();
 	})();
-	
+
 	/* Set event handler to Body element, for hide a floated-picker */
 	$(function(){
 		$('body').click(function(){
